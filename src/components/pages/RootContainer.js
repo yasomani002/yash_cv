@@ -8,7 +8,8 @@ import { Skills } from './Skills'
 import { Achievements } from './Achievements'
 import Hobbies from './Hobbies'
 import Contact from './Contact'
-import axios from 'axios'
+import useDataFetch from '../common/useDataFetch'
+import Spinner from '../common/Spinner'
 
 const useStyles = makeStyles({
     root: {
@@ -47,40 +48,46 @@ const useStyles = makeStyles({
         },
     }
 })
-const RootContainer = props => {
+const RootContainer = () => {
     const classes = useStyles()
-    const [error, setError] = useState()
     const [leftResponse, setLeftResponse] = useState()
+
+    // api call
+    const { data, loading } = useDataFetch("https://65b3f716770d43aba47ac437.mockapi.io/portfolio/getData")
     useEffect(() => {
-        axios.get("https://65b3f716770d43aba47ac437.mockapi.io/portfolio/getData")
-            .then((response) => setLeftResponse(response?.data))
-            .catch((error) => setError(error))
-    }, [])
+        if (data) {
+            setLeftResponse(data.data)
+        }
+    }, [data])
+
     return (
         <>
-            <div className={classes.root}>
-                <div className={classes.body}>
-                    {/* left pannel  */}
-                    <div className={classes?.panel}>
-                        {leftResponse?.map((data, index) => {
-                            return (
-                                <Fragment key={index}>
-                                    <div className={classes.topTitleContainer}>
-                                        <Title />
-                                        <Contact />
-                                    </div>
-                                    <Education data={data?.education} />
-                                    <Skills data={data?.skills} />
-                                    <ProfessionalCareer data={data?.professionalCareer} />
-                                    <Projects data={data?.projects} />
-                                    <Hobbies data={data?.hobbies} />
-                                    <Achievements data={data?.achievements} />
-                                </Fragment>
-                            )
-                        })}
+            {loading ?
+                <Spinner /> :
+                <div className={classes.root}>
+                    <div className={classes.body}>
+                        {/* left pannel  */}
+                        <div className={classes?.panel}>
+                            {leftResponse?.map((data, index) => {
+                                return (
+                                    <Fragment key={index}>
+                                        <div className={classes.topTitleContainer}>
+                                            <Title />
+                                            <Contact />
+                                        </div>
+                                        <Education data={data?.education} />
+                                        <Skills data={data?.skills} />
+                                        <ProfessionalCareer data={data?.professionalCareer} />
+                                        <Projects data={data?.projects} />
+                                        <Hobbies data={data?.hobbies} />
+                                        <Achievements data={data?.achievements} />
+                                    </Fragment>
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </>
     )
 }
