@@ -17,17 +17,20 @@ const useStyles = makeStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#eee6e6'
     },
     body: {
         height: 'auto',
         maxWidth: '692px',
         width: '595px',
-        backgroundColor: '#BCCCF8',
+        // backgroundColor: '#BCCCF8',
         display: 'grid',
         padding: '1rem',
         boxSizing: 'border-box',
         borderRadius: '0.5rem',
-        margin: '1rem 0'
+        margin: '1rem 0',
+        boxShadow: '#696c80 6px 6px 7px',
+        backgroundColor: '#ffffff'
     },
     textContainer: {
         margin: '20px 0'
@@ -49,6 +52,9 @@ const useStyles = makeStyles({
             display: 'grid',
             gridTemplateColumns: '1fr',
             margin: '0.5rem 0.5rem'
+        },
+        panel: {
+            padding: '0px',
         },
     }
 })
