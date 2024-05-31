@@ -10,6 +10,7 @@ import Hobbies from './Hobbies'
 import Contact from './Contact'
 import useDataFetch from '../common/useDataFetch'
 import Spinner from '../common/Spinner'
+import Tools from './Tools'
 
 const useStyles = makeStyles({
     root: {
@@ -25,7 +26,8 @@ const useStyles = makeStyles({
         display: 'grid',
         padding: '1rem',
         boxSizing: 'border-box',
-        borderRadius: '0.5rem'
+        borderRadius: '0.5rem',
+        margin: '1rem 0'
     },
     textContainer: {
         margin: '20px 0'
@@ -33,18 +35,20 @@ const useStyles = makeStyles({
     panel: {
         display: 'grid',
         padding: '10px',
-        rowGap: '1rem'
+        rowGap: '14px'
     },
     topTitleContainer: {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         columnGap: '1rem',
-        margin: '0 0 1rem 0'
+        height: 'auto',
+        minHeight: '10vh'
     },
     '@media (max-width: 800px)': {
         body: {
             display: 'grid',
-            gridTemplateColumns: '1fr'
+            gridTemplateColumns: '1fr',
+            margin: '0.5rem 0.5rem'
         },
     }
 })
@@ -77,6 +81,7 @@ const RootContainer = () => {
                                         </div>
                                         <Education data={data?.education} />
                                         <Skills data={data?.skills} />
+                                        <Tools data={data.tools} />
                                         <ProfessionalCareer data={data?.professionalCareer} />
                                         <Projects data={data?.projects} />
                                         <Hobbies data={data?.hobbies} />

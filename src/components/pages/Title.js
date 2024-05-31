@@ -4,8 +4,7 @@ import Typo from '../common/Typo'
 
 const useStyles = makeStyles({
     container: {
-        height: 'auto',
-        minHeight: '10vh'
+
     }
 
 })

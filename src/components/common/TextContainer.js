@@ -10,7 +10,7 @@ const useStyles = makeStyles({
         backgroundColor: '#000000',
         height: '2px',
         width: '100%',
-        margin: '10px 0'
+        margin: '8px 0'
     },
     roleDetialsContainer: {
         margin: '15px 0'
