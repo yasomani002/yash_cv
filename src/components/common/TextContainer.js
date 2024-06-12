@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     },
     divider: {
         backgroundColor: '#000000',
-        height: '2px',
+        height: '1px',
         width: '100%',
         margin: '8px 0'
     },
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
         fontFamily: 'Itim'
     }
 })
-export const TextContainer = ({ title, description, roleDetails, asLink }) => {
+export const TextContainer = ({ title, description, roleDetails, asLink, isBold }) => {
     const classes = useStyles()
     return (
         <>
@@ -42,7 +42,11 @@ export const TextContainer = ({ title, description, roleDetails, asLink }) => {
                         <div key={index} className={classes.roleDetialsContainer}>
                             {data?.role &&
                                 <>
-                                    <Typo varient="it03">{data?.role}</Typo>
+                                    {isBold ?
+                                        <Typo varient="it04">{data?.role}</Typo>
+                                        :
+                                        <Typo varient="it03">{data?.role}</Typo>
+                                    }
                                     <br />
                                 </>
                             }

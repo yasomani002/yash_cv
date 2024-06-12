@@ -16,6 +16,7 @@ export const ProfessionalCareer = ({ data }) => {
                 title={data?.title}
                 description={data?.description}
                 roleDetails={data?.roleDetails}
+                isBold={true}
             />
         </div>
     )

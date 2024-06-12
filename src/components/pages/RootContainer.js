@@ -38,14 +38,15 @@ const useStyles = makeStyles({
     panel: {
         display: 'grid',
         padding: '10px',
-        rowGap: '14px'
+        rowGap: '20px'
     },
     topTitleContainer: {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         columnGap: '1rem',
         height: 'auto',
-        minHeight: '10vh'
+        minHeight: '10vh',
+        marginBottom: '12px'
     },
     '@media (max-width: 800px)': {
         body: {

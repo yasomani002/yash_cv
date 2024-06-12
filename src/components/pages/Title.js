@@ -4,7 +4,8 @@ import Typo from '../common/Typo'
 
 const useStyles = makeStyles({
     container: {
-
+        display: 'flex',
+        alignItems: 'center',
     }
 
 })
