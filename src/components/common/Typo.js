@@ -3,12 +3,13 @@ import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
     it01: {
-        fontSize: 'clamp(1.125rem, 0.9688rem + 0.8333vw, 1.75rem)', //18px-28px
+        fontSize: 'clamp(1.5rem, 0.9688rem + 0.8333vw, 1.75rem)', //24px-28px
         fontFamily: 'Itim'
     },
     it02: {
-        fontSize: 'clamp(0.250rem , 5vw, 1.250rem)', //4px-20px
-        fontFamily: 'Itim'
+        fontSize: 'clamp(0.250rem , 5vw, 1rem)', //4px-16px
+        fontFamily: 'Itim',
+        fontWeight: 600
     },
     it03: {
         fontSize: 'clamp(0.250rem , 5vw, 0.875rem)', //4px-14px
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
     it04: {
         fontSize: 'clamp(0.250rem , 5vw, 0.875rem)', //4px-14px
         fontFamily: 'Itim',
-        fontWeight: 600 
+        fontWeight: 600
     }
 })
 
@@ -32,8 +33,9 @@ const Typo = ({ children, varient, onClick, className }) => {
     return (
         <span
             onClick={onClick}
-            className={`${varientData[varient]} ${className}`}>
-            {children}
+            className={`${varientData[varient]} ${className}`}
+            dangerouslySetInnerHTML={{ __html: children  }}
+        >
         </span>
     )
 }

@@ -27,16 +27,10 @@ export const TextContainer = ({ title, description, roleDetails, asLink, isBold 
             <div className={classes.root}>
                 <Typo varient="it02">{title}</Typo>
                 <div className={classes.divider}></div>
-                {description?.map((data, index) => {
-                    return (
-                        <Fragment key={index}>
-                            <Typo varient="it03">
-                                {data}
-                                <br />
-                            </Typo>
-                        </Fragment>
-                    )
-                })}
+                <Typo varient="it03">
+                    {description}
+                </Typo>
+
                 {roleDetails?.map((data, index) => {
                     return (
                         <div key={index} className={classes.roleDetialsContainer}>

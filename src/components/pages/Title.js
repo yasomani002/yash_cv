@@ -5,7 +5,9 @@ import Typo from '../common/Typo'
 const useStyles = makeStyles({
     container: {
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
+        rowGap: '0.5rem'
     }
 
 })
@@ -16,8 +18,9 @@ const Title = () => {
         <div className={classes.container} >
             <Typo varient="it01">
                 Yash Somani
-                <br />
-                (Front End Developer)
+            </Typo>
+            <Typo varient="it03">
+                ( Front End Developer )
             </Typo>
         </div>
 

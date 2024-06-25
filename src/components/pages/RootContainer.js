@@ -11,6 +11,7 @@ import Contact from './Contact'
 import useDataFetch from '../common/useDataFetch'
 import Spinner from '../common/Spinner'
 import Tools from './Tools'
+import Summary from './Summary'
 
 const useStyles = makeStyles({
     root: {
@@ -41,8 +42,9 @@ const useStyles = makeStyles({
         rowGap: '20px'
     },
     topTitleContainer: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         columnGap: '1rem',
         height: 'auto',
         minHeight: '10vh',
@@ -86,6 +88,7 @@ const RootContainer = () => {
                                             <Title />
                                             <Contact />
                                         </div>
+                                        <Summary data={data?.summary}/>
                                         <Education data={data?.education} />
                                         <Skills data={data?.skills} />
                                         <Tools data={data.tools} />
